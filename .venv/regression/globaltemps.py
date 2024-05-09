@@ -38,7 +38,12 @@ class globaltemps:
         # inlier_mask[-18:] = True
         self.dfo = self.df[~inlier_mask]
         self.df = self.df[inlier_mask]
-
+# Create the scatter plot
+        plt.scatter(data.df["dt"], data.df["AverageTemperature"])
+        plt.title("Average Temperature by Year")
+        plt.xlabel("Year")
+        plt.ylabel("Average Temperature")
+        plt.show()
     def split_data(self, features, target, test_size=0.2, random_state=None):
         test_size = float(test_size)
         X = self.df[features]
